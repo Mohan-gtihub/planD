@@ -11,6 +11,12 @@ import { lottie, images } from '../data/assets.js'
 
 const ease = [0.22, 1, 0.36, 1]
 
+// A balanced six for the homepage — three marketing, three tech.
+const featuredSlugs = ['seo', 'meta-ads', 'social-media-marketing', 'custom-software', 'ai-automation', 'web-development']
+const featured = featuredSlugs
+  .map((slug) => services.find((s) => s.slug === slug))
+  .filter(Boolean)
+
 export default function Home() {
   return (
     <>
@@ -30,15 +36,16 @@ export default function Home() {
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05, ease }}
                 className="mt-6 max-w-3xl font-display text-[2.75rem] font-bold leading-[1.05] tracking-tighter text-ink-900 sm:text-6xl"
               >
-                We build brands that grow online.
+                We grow brands and build the tech behind them.
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.12, ease }}
                 className="mt-7 max-w-xl text-lg leading-relaxed text-ink-500"
               >
-                The Plan D is a full-service agency for marketing, design and development.
-                We turn strategy, creativity and data into measurable growth.
+                The Plan D is a full-service agency with two arms — marketing &amp; brand, and
+                technology &amp; software. From SEO and social to custom software and AI automation,
+                one team takes you from idea to growth.
               </motion.p>
 
               <motion.div
@@ -83,13 +90,13 @@ export default function Home() {
             <SectionTitle
               center={false}
               eyebrow="What we do"
-              title="Everything you need to grow"
-              subtitle="From search rankings to social campaigns, content and events — one team, one plan."
+              title="Marketing and technology, together"
+              subtitle="From SEO and social to custom software and AI automation — one team covers both sides of your growth."
             />
             <Link to="/services" className="link-underline shrink-0 text-sm">All services →</Link>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
+            {featured.map((s, i) => (
               <Reveal key={s.slug} delay={(i % 3) * 0.06}>
                 <ServiceCard service={s} index={i} />
               </Reveal>
@@ -104,18 +111,18 @@ export default function Home() {
           <Reveal>
             <span className="eyebrow">Why The Plan D</span>
             <h2 className="mt-6 font-display text-3xl font-bold leading-[1.1] tracking-tighter text-ink-900 sm:text-4xl">
-              Creativity and data, working together
+              Marketing and engineering, working together
             </h2>
             <p className="mt-5 leading-relaxed text-ink-500">
-              We combine design, technology, analytics and marketing to deliver real business
-              growth — from SEO and content to social media and conversion.
+              Most agencies do one or the other. We do both — the marketing that gets you seen and
+              the software and AI that runs your business. One team, from strategy to shipping code.
             </p>
             <ul className="mt-8 divide-y divide-ink-200/70 border-t border-ink-200/70">
               {[
-                'A dedicated, multi-disciplinary team',
-                'Strategies tailored to your business',
-                'Focused on real, measurable ROI',
-                'Transparent, regular reporting',
+                'Marketing & software under one roof',
+                'Custom builds, not off-the-shelf templates',
+                'AI automation that saves real hours',
+                'Focused on measurable business results',
               ].map((t) => (
                 <li key={t} className="flex items-center gap-3 py-3.5 text-sm text-ink-700">
                   <ArrowRight size={15} className="shrink-0 text-brand-500" />

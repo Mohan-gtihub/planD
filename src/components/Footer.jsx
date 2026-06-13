@@ -54,7 +54,10 @@ export default function Footer() {
         <div className="lg:col-span-3">
           <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-ink-400">Services</h4>
           <ul className="mt-5 space-y-3 text-sm">
-            {services.slice(0, 5).map((s) => (
+            {['seo', 'social-media-marketing', 'custom-software', 'ai-automation', 'web-development']
+              .map((slug) => services.find((s) => s.slug === slug))
+              .filter(Boolean)
+              .map((s) => (
               <li key={s.slug}>
                 <Link to={`/services/${s.slug}`} className="hover:text-white">{s.title}</Link>
               </li>

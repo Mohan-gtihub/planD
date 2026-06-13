@@ -2,6 +2,9 @@ import {
   Search, Megaphone, Share2, Hash, PenTool, CalendarCheck, PartyPopper,
   TrendingUp, Users, BarChart3, Target, Camera, Image, Film, LineChart,
   CalendarDays, ListChecks, Star, Sparkles,
+  // Tech & software
+  Code2, Bot, Globe, Smartphone, Cloud, Palette, Database, Workflow,
+  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes,
 } from 'lucide-react'
 
 // Only the icons referenced in the data file are imported, so the bundle
@@ -10,6 +13,8 @@ const map = {
   Search, Megaphone, Share2, Hash, PenTool, CalendarCheck, PartyPopper,
   TrendingUp, Users, BarChart3, Target, Camera, Image, Film, LineChart,
   CalendarDays, ListChecks, Star,
+  Code2, Bot, Globe, Smartphone, Cloud, Palette, Database, Workflow,
+  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes,
   // aliases used in data
   CameraIcon: Camera,
 }

@@ -30,7 +30,7 @@ export const stats = [
 ]
 
 // Icons are referenced by lucide-react name in the component.
-export const services = [
+const rawServices = [
   {
     slug: 'seo',
     icon: 'Search',
@@ -237,6 +237,207 @@ export const services = [
       { icon: 'CameraIcon', title: 'Professional Coverage', text: 'Photography & videography to capture every moment.' },
       { icon: 'Star', title: 'Memorable Experiences', text: 'Professional, organized and impactful events.' },
     ],
+  },
+
+  // ─── Technology & Software ───────────────────────────────────────────────
+  {
+    slug: 'custom-software',
+    icon: 'Code2',
+    title: 'Custom Software Development',
+    short: 'Tailor-made software, dashboards and internal tools built around your business.',
+    hero: 'We design and build bespoke software that fits your exact workflow — no off-the-shelf compromises.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What is Custom Software Development?',
+        paragraphs: [
+          'Custom software is built specifically for your business instead of forcing your processes into a generic tool.',
+          'We turn your requirements into reliable, scalable systems — from internal dashboards to full SaaS products.',
+        ],
+      },
+      {
+        heading: 'What We Build',
+        list: ['SaaS platforms', 'Admin dashboards', 'Internal business tools', 'Booking & CRM systems', 'Inventory & billing software', 'APIs & integrations'],
+      },
+      {
+        heading: 'How We Work',
+        list: ['Discovery & requirements', 'UI/UX & architecture', 'Agile development', 'Testing & QA', 'Deployment', 'Support & maintenance'],
+      },
+    ],
+    why: [
+      { icon: 'Layers', title: 'Built For You', text: 'Software shaped around your exact processes, not a template.' },
+      { icon: 'Gauge', title: 'Scalable & Fast', text: 'Clean architecture that grows with your business.' },
+      { icon: 'ShieldCheck', title: 'Reliable & Secure', text: 'Tested, maintainable code with security in mind.' },
+    ],
+  },
+  {
+    slug: 'ai-automation',
+    icon: 'Bot',
+    title: 'AI Automation & Agents',
+    short: 'AI workflows, chatbots and agents that cut manual work and save hours.',
+    hero: 'We use AI to automate repetitive work — chatbots, smart workflows and autonomous agents tailored to your operations.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What is AI Automation?',
+        paragraphs: [
+          'AI automation uses tools like LLMs and workflow engines to handle repetitive tasks automatically.',
+          'From answering customers to processing data, we build systems that work for you 24/7.',
+        ],
+      },
+      {
+        heading: 'What We Automate',
+        list: ['AI chatbots & assistants', 'Customer support automation', 'Lead capture & follow-up', 'Document & data processing', 'Workflow automation (n8n / Make)', 'Custom AI agents'],
+      },
+      {
+        heading: 'Tools & Tech We Use',
+        list: ['OpenAI & Claude APIs', 'RAG & vector databases', 'n8n, Make & Zapier', 'WhatsApp & CRM integrations', 'Custom backend logic', 'Analytics & monitoring'],
+      },
+    ],
+    why: [
+      { icon: 'Zap', title: 'Save Time', text: 'Automate hours of manual work every single day.' },
+      { icon: 'Cpu', title: 'Smart & Adaptive', text: 'AI agents that understand context and act on it.' },
+      { icon: 'Workflow', title: 'Fully Integrated', text: 'Connected to the tools and channels you already use.' },
+    ],
+  },
+  {
+    slug: 'web-development',
+    icon: 'Globe',
+    title: 'Web Development',
+    short: 'Fast, modern websites and web apps that look great and convert.',
+    hero: 'High-performance websites and web applications — built with modern tech, optimized for speed and SEO.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What We Build',
+        paragraphs: [
+          'We build everything from marketing sites to complex web applications and e-commerce stores.',
+          'Every build is responsive, fast and search-friendly out of the box.',
+        ],
+      },
+      { heading: 'Types of Websites', list: ['Business & landing pages', 'E-commerce stores', 'Web applications', 'Portfolios', 'Booking platforms', 'Dashboards'] },
+      { heading: 'Our Tech Stack', list: ['React & Next.js', 'Node.js & APIs', 'Tailwind CSS', 'Headless CMS', 'Databases', 'Performance & SEO'] },
+    ],
+    why: [
+      { icon: 'Gauge', title: 'Blazing Fast', text: 'Optimized for speed, Core Web Vitals and SEO.' },
+      { icon: 'Smartphone', title: 'Fully Responsive', text: 'Looks perfect on every screen size and device.' },
+      { icon: 'TrendingUp', title: 'Built to Convert', text: 'Clean UX designed to turn visitors into customers.' },
+    ],
+  },
+  {
+    slug: 'mobile-apps',
+    icon: 'Smartphone',
+    title: 'Mobile App Development',
+    short: 'Cross-platform iOS & Android apps from one clean codebase.',
+    hero: 'Native-quality mobile apps for iOS and Android — built once, delivered everywhere.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What We Offer',
+        paragraphs: [
+          'We build cross-platform mobile apps that run smoothly on both iOS and Android from a single codebase.',
+          'From idea to App Store, we handle design, development and launch.',
+        ],
+      },
+      { heading: 'App Types', list: ['Business apps', 'E-commerce apps', 'Booking & service apps', 'Delivery apps', 'Social apps', 'Internal tools'] },
+      { heading: 'Tech We Use', list: ['React Native', 'Flutter', 'Push notifications', 'Payments & APIs', 'Offline support', 'App Store deployment'] },
+    ],
+    why: [
+      { icon: 'Smartphone', title: 'iOS + Android', text: 'One codebase, both platforms — faster and cheaper.' },
+      { icon: 'Zap', title: 'Smooth Performance', text: 'Native-quality speed and animations.' },
+      { icon: 'ShieldCheck', title: 'Store-Ready', text: 'We handle publishing to the App Store & Play Store.' },
+    ],
+  },
+  {
+    slug: 'cloud-devops',
+    icon: 'Cloud',
+    title: 'Cloud & DevOps',
+    short: 'Cloud hosting, CI/CD and infrastructure that scales reliably.',
+    hero: 'We set up and manage your cloud infrastructure — fast deployments, reliable hosting and effortless scaling.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What is Cloud & DevOps?',
+        paragraphs: [
+          'DevOps connects development and operations so software ships faster and runs reliably.',
+          'We handle hosting, automation and scaling so you can focus on the product.',
+        ],
+      },
+      { heading: 'What We Handle', list: ['Cloud setup (AWS / GCP / Azure)', 'CI/CD pipelines', 'Server & database hosting', 'Domain & SSL setup', 'Monitoring & backups', 'Scaling & security'] },
+      { heading: 'Tools We Use', list: ['Docker', 'GitHub Actions', 'Vercel & Netlify', 'AWS & Cloudflare', 'Databases & storage', 'Monitoring tools'] },
+    ],
+    why: [
+      { icon: 'GitBranch', title: 'Fast Deployments', text: 'Automated pipelines that ship updates safely.' },
+      { icon: 'Gauge', title: 'Always On', text: 'Reliable, monitored hosting with minimal downtime.' },
+      { icon: 'Boxes', title: 'Scales With You', text: 'Infrastructure that grows as your traffic grows.' },
+    ],
+  },
+  {
+    slug: 'ui-ux-design',
+    icon: 'Palette',
+    title: 'UI / UX Design',
+    short: 'Clean, intuitive interfaces and product design that users love.',
+    hero: 'We design beautiful, easy-to-use interfaces — from wireframes to polished, production-ready UI.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What is UI/UX Design?',
+        paragraphs: [
+          'UX is how a product works; UI is how it looks. Great products need both.',
+          'We design experiences that are intuitive, accessible and on-brand.',
+        ],
+      },
+      { heading: 'What We Design', list: ['Web & app interfaces', 'Wireframes & prototypes', 'Design systems', 'Dashboards', 'User flows', 'Brand-aligned UI'] },
+      { heading: 'Our Process', list: ['Research & user flows', 'Wireframing', 'High-fidelity UI', 'Interactive prototypes', 'Design handoff', 'Iteration'] },
+    ],
+    why: [
+      { icon: 'Palette', title: 'Pixel-Perfect', text: 'Clean, modern interfaces crafted to the detail.' },
+      { icon: 'Users', title: 'User-First', text: 'Designs based on how people actually use products.' },
+      { icon: 'Layers', title: 'Consistent', text: 'Reusable design systems that keep everything aligned.' },
+    ],
+  },
+  {
+    slug: 'data-analytics',
+    icon: 'Database',
+    title: 'Data & Analytics',
+    short: 'Dashboards, reporting and integrations that turn data into decisions.',
+    hero: 'We connect your data and build dashboards that give you clear, real-time insight into your business.',
+    category: 'tech',
+    sections: [
+      {
+        heading: 'What We Offer',
+        paragraphs: [
+          'We help you collect, connect and visualize your data so you can make better decisions.',
+          'From custom dashboards to automated reports, we make your numbers easy to act on.',
+        ],
+      },
+      { heading: 'What We Build', list: ['Custom dashboards', 'Automated reports', 'Data pipelines & ETL', 'API & tool integrations', 'KPI tracking', 'Real-time analytics'] },
+      { heading: 'Tools We Use', list: ['Google Analytics & Looker', 'Power BI', 'SQL & databases', 'Custom dashboards', 'APIs & webhooks', 'Spreadsheets & exports'] },
+    ],
+    why: [
+      { icon: 'BarChart3', title: 'Clear Insights', text: 'See exactly what matters, at a glance.' },
+      { icon: 'Plug', title: 'Connected Data', text: 'All your tools and sources in one place.' },
+      { icon: 'LineChart', title: 'Better Decisions', text: 'Real numbers to guide every move you make.' },
+    ],
+  },
+]
+
+// Default any untagged service to the marketing arm.
+export const services = rawServices.map((s) => ({ category: 'marketing', ...s }))
+
+// Service arms — drives the "Marketing + Technology" split across the site.
+export const serviceGroups = [
+  {
+    key: 'marketing',
+    label: 'Marketing & Brand',
+    tagline: 'Get seen, get found, get customers.',
+    services: services.filter((s) => s.category === 'marketing'),
+  },
+  {
+    key: 'tech',
+    label: 'Technology & Software',
+    tagline: 'Custom software, AI automation and the tech that powers it.',
+    services: services.filter((s) => s.category === 'tech'),
   },
 ]
 

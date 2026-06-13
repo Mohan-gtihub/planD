@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { services } from '../data/site.js'
+import { serviceGroups } from '../data/site.js'
 import PageHero from '../components/PageHero.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
+import SectionTitle from '../components/SectionTitle.jsx'
 import Reveal from '../components/Reveal.jsx'
 
 export default function ServicesPage() {
@@ -10,17 +11,22 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Everything your brand needs to grow"
-        subtitle="A complete suite of digital marketing, design and development services — explore each one below."
+        title="Marketing and technology, under one roof"
+        subtitle="Two arms, one team — we grow your brand and build the software and AI that powers it."
       />
       <section className="py-20">
-        <div className="container-px grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <Reveal key={s.slug} delay={(i % 3) * 0.07}>
-              <ServiceCard service={s} index={i} />
-            </Reveal>
-          ))}
-        </div>
+        {serviceGroups.map((group, gi) => (
+          <div key={group.key} className={gi > 0 ? 'container-px mt-20' : 'container-px'}>
+            <SectionTitle center={false} eyebrow={group.label} title={group.label} subtitle={group.tagline} />
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {group.services.map((s, i) => (
+                <Reveal key={s.slug} delay={(i % 3) * 0.07}>
+                  <ServiceCard service={s} index={i} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        ))}
 
         <div className="container-px mt-16">
           <Reveal>
