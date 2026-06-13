@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Plan D</title>
+    <!--
+      GitHub Pages SPA fallback. Any unknown path (e.g. /services/seo loaded
+      directly or refreshed) lands here; we stash the path and redirect to /,
+      where the app's router restores it. Works with a custom domain at root.
+    -->
+    <script>
+      sessionStorage.setItem('spa-redirect', location.pathname + location.search + location.hash)
+      location.replace('/')
+    </script>
+  </head>
+  <body></body>
+</html>

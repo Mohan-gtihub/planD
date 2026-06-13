@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink-900 font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    @apply bg-brand-500/20 text-ink-900;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-200 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-300;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-screen-2xl px-6 sm:px-10 lg:px-16;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 px-6 py-3
+      text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-600
+      focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-200 bg-white px-6 py-3
+      text-sm font-semibold text-ink-800 transition-colors duration-200 hover:border-ink-300 hover:bg-ink-50;
+  }
+
+  /* Section label */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.18em] text-ink-400;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply h-1.5 w-1.5 rounded-full bg-brand-500;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white;
+  }
+
+  .link-underline {
+    @apply relative font-medium text-ink-900;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-500 transition-all duration-300;
+  }
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Subtle dotted grid used behind hero / sections */
+.bg-dotgrid {
+  background-image: radial-gradient(rgba(15, 20, 34, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
