@@ -51,10 +51,21 @@ export default {
       keyframes: {
         float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
         marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+        drift1: {
+          '0%,100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(6%, -4%) scale(1.08)' },
+          '66%': { transform: 'translate(-4%, 5%) scale(0.96)' },
+        },
+        drift2: {
+          '0%,100%': { transform: 'translate(0, 0) scale(1)' },
+          '50%': { transform: 'translate(-7%, -6%) scale(1.12)' },
+        },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
         marquee: 'marquee 28s linear infinite',
+        drift1: 'drift1 22s ease-in-out infinite',
+        drift2: 'drift2 28s ease-in-out infinite',
       },
     },
   },

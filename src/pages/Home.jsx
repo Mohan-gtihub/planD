@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-white pt-36 pb-24 sm:pt-44">
+      <section className="pt-36 pb-24 sm:pt-44">
         <div className="container-px">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">

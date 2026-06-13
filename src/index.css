@@ -72,3 +72,17 @@
   background-image: radial-gradient(rgba(15, 20, 34, 0.06) 1px, transparent 1px);
   background-size: 22px 22px;
 }
+
+/* When the custom cursor is active, hide the native one (desktop only). */
+@media (pointer: fine) {
+  .has-custom-cursor,
+  .has-custom-cursor a,
+  .has-custom-cursor button,
+  .has-custom-cursor [role='button'],
+  .has-custom-cursor label,
+  .has-custom-cursor input,
+  .has-custom-cursor textarea,
+  .has-custom-cursor select {
+    cursor: none;
+  }
+}
