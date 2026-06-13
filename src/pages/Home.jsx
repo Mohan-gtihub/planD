@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { services, stats, process, company } from '../data/site.js'
+import { ArrowRight, ArrowUpRight, Star } from 'lucide-react'
+import { services, stats, process, company, capabilities, testimonials, techMarquee } from '../data/site.js'
 import ServiceCard from '../components/ServiceCard.jsx'
 import SectionTitle from '../components/SectionTitle.jsx'
 import CountUp from '../components/CountUp.jsx'
 import Reveal from '../components/Reveal.jsx'
 import Lottie from '../components/Lottie.jsx'
+import TechStack from '../components/TechStack.jsx'
+import Faq from '../components/Faq.jsx'
+import Icon from '../components/Icon.jsx'
 import { lottie, images } from '../data/assets.js'
 
 const ease = [0.22, 1, 0.36, 1]
@@ -21,8 +24,13 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-36 pb-24 sm:pt-44">
-        <div className="container-px">
+      <section className="relative overflow-hidden pt-36 pb-24 sm:pt-44">
+        {/* clean layered background */}
+        <div className="pointer-events-none absolute inset-0 bg-dotgrid opacity-[0.35] [mask-image:radial-gradient(110%_80%_at_70%_20%,#000,transparent_75%)]" />
+        <div className="pointer-events-none absolute -right-32 -top-24 h-[42rem] w-[42rem] rounded-full bg-brand-100/50 blur-[140px]" />
+        <div className="pointer-events-none absolute -left-40 top-1/2 h-[28rem] w-[28rem] rounded-full bg-brand-50 blur-[120px]" />
+
+        <div className="container-px relative">
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <motion.span
@@ -59,11 +67,12 @@ export default function Home() {
 
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.2, ease }}
-              className="lg:col-span-5"
+              className="relative lg:col-span-5"
             >
-              <div className="mx-auto flex max-w-md items-center justify-center rounded-3xl border border-ink-100 bg-ink-50 p-6">
-                <Lottie src={lottie.hero} className="aspect-square w-full" />
-              </div>
+              {/* soft halo so the Lottie fills the space, not floats in white */}
+              <div className="pointer-events-none absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-brand-100/70 to-white blur-2xl" />
+              {/* Clean, plain Lottie — large and centered */}
+              <Lottie src={lottie.hero} className="relative mx-auto w-full max-w-2xl lg:scale-[1.35] lg:-mr-6" />
             </motion.div>
           </div>
 
@@ -83,6 +92,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TECH LOGO MARQUEE */}
+      <section className="overflow-hidden border-y border-ink-100 bg-ink-50/60 py-10">
+        <p className="container-px text-center text-xs font-semibold uppercase tracking-[0.18em] text-ink-400">
+          Powering brands with a modern marketing &amp; software stack
+        </p>
+
+        <div className="relative mt-7 flex overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="flex w-max animate-marquee gap-3">
+            {[...techMarquee, ...techMarquee].map((t, i) => (
+              <TechChip key={i} {...t} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="border-t border-ink-100 py-24">
         <div className="container-px">
@@ -99,6 +123,31 @@ export default function Home() {
             {featured.map((s, i) => (
               <Reveal key={s.slug} delay={(i % 3) * 0.06}>
                 <ServiceCard service={s} index={i} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section className="border-t border-ink-100 bg-ink-900 py-24 text-white">
+        <div className="container-px">
+          <Reveal>
+            <span className="eyebrow !text-brand-300 before:bg-brand-400">What sets us apart</span>
+            <h2 className="mt-6 max-w-2xl font-display text-3xl font-bold leading-[1.1] tracking-tighter text-white sm:text-4xl">
+              The rare agency that markets <span className="text-brand-300">and</span> builds
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+            {capabilities.map((c, i) => (
+              <Reveal key={c.title} delay={(i % 4) * 0.06}>
+                <div className="h-full bg-ink-900 p-8">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-brand-300">
+                    <Icon name={c.icon} size={20} />
+                  </span>
+                  <h3 className="mt-6 font-display text-lg font-bold tracking-tight text-white">{c.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-400">{c.text}</p>
+                </div>
               </Reveal>
             ))}
           </div>
@@ -152,6 +201,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TECH STACK */}
+      <TechStack />
+
       {/* PROCESS */}
       <section className="border-t border-ink-100 py-24">
         <div className="container-px">
@@ -172,6 +224,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* TESTIMONIALS */}
+      <section className="border-t border-ink-100 bg-ink-50 py-24">
+        <div className="container-px">
+          <SectionTitle
+            center={false}
+            eyebrow="Client words"
+            title="Trusted by growing brands"
+            subtitle="A few words from the teams we’ve helped grow."
+          />
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={(i % 3) * 0.07}>
+                <figure className="card flex h-full flex-col p-7">
+                  <div className="flex gap-0.5 text-brand-500">
+                    {Array.from({ length: 5 }).map((_, s) => <Star key={s} size={15} fill="currentColor" />)}
+                  </div>
+                  <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-ink-700">“{t.quote}”</blockquote>
+                  <figcaption className="mt-6 border-t border-ink-100 pt-4">
+                    <p className="font-display text-sm font-bold text-ink-900">{t.name}</p>
+                    <p className="text-xs text-ink-500">{t.role}</p>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <Faq />
 
       {/* CTA */}
       <section className="border-t border-ink-100 py-24">
@@ -198,5 +281,15 @@ export default function Home() {
         </div>
       </section>
     </>
+  )
+}
+
+// Branded pill used in the hero tech marquee.
+function TechChip({ name, slug }) {
+  return (
+    <span className="flex shrink-0 items-center gap-2.5 rounded-full border border-ink-100 bg-white px-4 py-2.5 shadow-soft">
+      <img src={`https://cdn.simpleicons.org/${slug}`} alt="" width={20} height={20} loading="lazy" className="h-5 w-5 object-contain" />
+      <span className="text-sm font-semibold text-ink-700">{name}</span>
+    </span>
   )
 }

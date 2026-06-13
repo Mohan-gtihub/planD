@@ -473,6 +473,140 @@ export const team = [
   },
 ]
 
+// Technology stack — `slug` maps to a Simple Icons CDN logo (cdn.simpleicons.org).
+// slug:null falls back to a text chip. Grouped for a clean capabilities showcase.
+export const techStack = [
+  {
+    group: 'E-commerce',
+    icon: 'ShoppingBag',
+    items: [
+      { name: 'Shopify', slug: 'shopify' },
+      { name: 'WordPress', slug: 'wordpress' },
+      { name: 'WooCommerce', slug: 'woocommerce' },
+      { name: 'Liquid', slug: null },
+      { name: 'Headless commerce', slug: null },
+    ],
+  },
+  {
+    group: 'Frontend',
+    icon: 'Layers',
+    items: [
+      { name: 'React', slug: 'react' },
+      { name: 'Next.js', slug: 'nextdotjs' },
+      { name: 'TypeScript', slug: 'typescript' },
+      { name: 'JavaScript', slug: 'javascript' },
+      { name: 'Tailwind CSS', slug: 'tailwindcss' },
+      { name: 'Electron', slug: 'electron' },
+    ],
+  },
+  {
+    group: 'Backend',
+    icon: 'Code2',
+    items: [
+      { name: 'Node.js', slug: 'nodedotjs' },
+      { name: 'Python', slug: 'python' },
+      { name: 'PHP', slug: 'php' },
+      { name: 'Laravel', slug: 'laravel' },
+      { name: 'REST APIs', slug: null },
+    ],
+  },
+  {
+    group: 'Databases',
+    icon: 'Database',
+    items: [
+      { name: 'MongoDB', slug: 'mongodb' },
+      { name: 'PostgreSQL', slug: 'postgresql' },
+      { name: 'Supabase', slug: 'supabase' },
+      { name: 'MySQL', slug: 'mysql' },
+      { name: 'SQLite', slug: 'sqlite' },
+      { name: 'Firebase', slug: 'firebase' },
+    ],
+  },
+  {
+    group: 'AI & Automation',
+    icon: 'Bot',
+    items: [
+      { name: 'Claude', slug: 'claude' },
+      { name: 'OpenAI', slug: null },
+      { name: 'n8n', slug: 'n8n' },
+      { name: 'Zapier', slug: 'zapier' },
+      { name: 'RAG / Vector DBs', slug: null },
+    ],
+  },
+  {
+    group: 'Cloud & DevOps',
+    icon: 'Cloud',
+    items: [
+      { name: 'Vercel', slug: 'vercel' },
+      { name: 'Netlify', slug: 'netlify' },
+      { name: 'Cloudflare', slug: 'cloudflare' },
+      { name: 'Docker', slug: 'docker' },
+      { name: 'AWS', slug: null },
+    ],
+  },
+  {
+    group: 'State & Data',
+    icon: 'Workflow',
+    items: [
+      { name: 'Zustand', slug: null },
+      { name: 'React Query', slug: 'reactquery' },
+      { name: 'Redux', slug: 'redux' },
+      { name: 'Webhooks', slug: null },
+    ],
+  },
+  {
+    group: 'Tools',
+    icon: 'GitBranch',
+    items: [
+      { name: 'Git & GitHub', slug: 'github' },
+      { name: 'VS Code', slug: null },
+      { name: 'Vite', slug: 'vite' },
+      { name: 'Figma', slug: 'figma' },
+    ],
+  },
+]
+
+// Logos for the trust marquee under the hero (Simple Icons CDN slugs).
+export const techMarquee = [
+  { name: 'React', slug: 'react' },
+  { name: 'Next.js', slug: 'nextdotjs' },
+  { name: 'TypeScript', slug: 'typescript' },
+  { name: 'Node.js', slug: 'nodedotjs' },
+  { name: 'Shopify', slug: 'shopify' },
+  { name: 'WordPress', slug: 'wordpress' },
+  { name: 'MongoDB', slug: 'mongodb' },
+  { name: 'PostgreSQL', slug: 'postgresql' },
+  { name: 'Supabase', slug: 'supabase' },
+  { name: 'Tailwind', slug: 'tailwindcss' },
+  { name: 'Figma', slug: 'figma' },
+  { name: 'Laravel', slug: 'laravel' },
+  { name: 'Docker', slug: 'docker' },
+  { name: 'Vercel', slug: 'vercel' },
+  { name: 'GitHub', slug: 'github' },
+  { name: 'Python', slug: 'python' },
+]
+
+// Why-work-with-us capability pillars.
+export const capabilities = [
+  { icon: 'Megaphone', title: 'Marketing that performs', text: 'SEO, paid ads and social built on data — not guesswork — to bring real traffic and leads.' },
+  { icon: 'Code2', title: 'Software that scales', text: 'Custom web, mobile and e-commerce builds on modern, maintainable stacks.' },
+  { icon: 'Bot', title: 'AI that saves time', text: 'Automations and AI agents that handle the repetitive work so your team doesn’t.' },
+  { icon: 'Palette', title: 'Design that converts', text: 'Clean, on-brand UI/UX that turns visitors into customers.' },
+]
+
+export const testimonials = [
+  { quote: 'They rebuilt our store on Shopify and ran the ads — sales nearly doubled in three months.', name: 'Ravi Teja', role: 'Founder, D2C Brand' },
+  { quote: 'The AI automation they set up replaced hours of manual follow-ups every single day.', name: 'Sneha Reddy', role: 'Operations Lead' },
+  { quote: 'One team for our website, SEO and social. Finally everything is consistent and on-brand.', name: 'Arjun Mehta', role: 'Marketing Manager' },
+]
+
+export const faqs = [
+  { q: 'Do you handle both marketing and software?', a: 'Yes — that’s the whole idea. One team covers your marketing and brand as well as your website, software and AI automation, so everything stays consistent.' },
+  { q: 'What platforms do you build on?', a: 'For e-commerce we use Shopify, WordPress and WooCommerce, plus fully custom builds in React and Next.js. We work across modern databases like MongoDB, PostgreSQL and Supabase.' },
+  { q: 'Can you automate parts of my business with AI?', a: 'Absolutely. We build chatbots, AI agents and workflow automations (using tools like n8n and the OpenAI/Claude APIs) that connect to the tools you already use.' },
+  { q: 'How do we get started?', a: 'Tell us your goals on the contact page. We’ll review them and put together a clear plan with scope, timeline and pricing — no obligation.' },
+]
+
 export const process = [
   { step: '01', title: 'Discover', text: 'We learn your business, goals and audience to build the right plan.' },
   { step: '02', title: 'Strategy', text: 'We design a data-driven roadmap across the channels that fit you.' },

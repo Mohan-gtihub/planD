@@ -4,7 +4,7 @@ import {
   CalendarDays, ListChecks, Star, Sparkles,
   // Tech & software
   Code2, Bot, Globe, Smartphone, Cloud, Palette, Database, Workflow,
-  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes,
+  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes, ShoppingBag,
 } from 'lucide-react'
 
 // Only the icons referenced in the data file are imported, so the bundle
@@ -14,7 +14,7 @@ const map = {
   TrendingUp, Users, BarChart3, Target, Camera, Image, Film, LineChart,
   CalendarDays, ListChecks, Star,
   Code2, Bot, Globe, Smartphone, Cloud, Palette, Database, Workflow,
-  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes,
+  Cpu, Layers, ShieldCheck, Zap, GitBranch, Gauge, Plug, Boxes, ShoppingBag,
   // aliases used in data
   CameraIcon: Camera,
 }
